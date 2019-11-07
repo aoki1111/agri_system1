@@ -6,7 +6,7 @@
   <ul class="dropdown">
     <li class="dashboard">
       <%= link_to dashboard_path do %><%= icon('fas','tachometer-alt') %><span>ダッシュボード</span><% end %>
-    </li>
+ｌ    </li>
     <li class="shipping">
       <a href=""><%= icon('fas', 'box') %><%= icon('fas', 'box-open') %><span class="drop-anime">出荷情報管理</span></a>
       <ul>
@@ -20,6 +20,7 @@
       <ul>
         <li><%= link_to "#" do %><%= icon('fas', 'map-signs')  %><span>圃場管理</span><% end %></li>
         <li><%= link_to "#" do %><%= icon('fas', 'pencil-alt') %><span>生産記録</span><% end %></li>
+        <li><%= link_to items_path do %><%= icon('fas', 'apple') %><span>野菜品目管理</span><% end %></li>
       </ul>
     </li>
     <li class="gap">

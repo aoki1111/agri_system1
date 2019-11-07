@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 	post '/signup',  to: 'users#create'
 	get    '/login',   to: 'sessions#new'
 	post   '/login',   to: 'sessions#create'
+	get 'get_pdf', to: 'pdf#get_pdf', format: 'pdf'
 	delete '/logout',  to: 'sessions#destroy'
 	resources :users, :except => [:new,:create]
 	resources :account_activations, only: [:edit]
@@ -21,6 +22,7 @@ Rails.application.routes.draw do
 	post '/shipments/stocks/complete', to: 'stocks#complete'
 	resources :postages, path: 'shipments/postages'
 	resources :password_resets, only: [:new, :create, :edit, :update]
+	resources :items
 	resources :users, shallow: true do
 		resources :rooms, shallow: true do
 			resources :messages

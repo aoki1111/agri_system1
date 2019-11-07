@@ -1,0 +1,10 @@
+<% provide(:title, '新規品目登録') %>
+<% provide(:header, '新規品目登録') %>
+<% provide(:button_text, '登録') %>
+<div class="main user-new">
+	<div class="oldform">
+		<%= form_for(@item, url: items_path) do |f| %>
+		<%= render partial: "form", locals: {f: f}%>
+		<% end %>
+	</div>
+</div>

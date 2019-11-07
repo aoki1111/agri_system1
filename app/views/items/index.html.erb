@@ -1,0 +1,30 @@
+<div class="main room_index">
+    <h1>野菜一覧</h1>
+    <%= link_to new_item_path, class: "button-dash" do %><button>新規登録</button><% end %>
+	<table>
+		<thead>
+			<tr class="list-items--row">
+				<th></th>
+				<th class="list-items--row__item">品目名</th>
+				<th class="list-items--row__item">地域</th>
+				<th class="list-items--row__item">説明</th>
+				<th class="list-items--row__item"></th>
+				<th class="list-items--row__item"></th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @items.each do |item| %>
+			<tr class="list-items--row">
+				<td><%= check_box_tag :pdf %></td>
+				<td class="list-items--row__item"><%= label_tag :pdf, item.item_name %></td>
+				<td class="list-items--row__item"><%= label_tag :pdf, item.area %></td>
+				<td class="list-items--row__item"><%= label_tag :pdf, item.description %></td>
+				<td class="list-items--row__item"><button><%= link_to '編集', edit_item_path(item) %></button></button></td>
+				<td class="list-items--row__item"><button><%= link_to '削除', item, method: :delete, data: { confirm: "本当に削除しますか？"} %></button></td>  
+			</tr>
+		</tbody>
+		<% end %>
+	</table>
+	<%= link_to 'PDF出力', items_path(format: :pdf) %>
+			
+</div

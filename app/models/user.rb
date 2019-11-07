@@ -28,6 +28,7 @@ class User < ApplicationRecord
   has_many :room_managers
   has_many :rooms, through: :room_managers
   has_many :messages
+  has_many :items, dependent: :destroy
 
   class << self
     def digest(string)
